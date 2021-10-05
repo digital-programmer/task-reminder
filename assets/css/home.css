@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* common css classes */
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.valign {
+  align-items: center;
+}
+
+.halign {
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+}
+
+/* for main layout */
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+main > div {
+  margin-bottom: 24px;
+}
+
+/* for app heading */
+
+.heading {
+  text-align: center;
+}
+
+/* add task form  */
+#add_task_form input,
+select {
+  width: 100%;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+.top_desc {
+  padding: 6px 10px 16px;
+  border-top: 1px solid grey;
+}
+
+.down_desc {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.down_desc_left {
+  border-right: 1px solid grey;
+}
+
+.down_desc_left,
+.down_desc_right {
+  padding-right: 10px;
+  padding: 6px 10px 16px;
+}
+
+.down_desc > div {
+  flex: 1;
+}
+
+#category {
+  margin-left: -3px;
+}
+
+/* button styles */
+button {
+  width: 120px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+button i {
+  margin-right: 5px;
+}
+
+/* delete task form */
+
+.task {
+  border-top: 1px solid grey;
+  padding: 16px 10px;
+}
+
+.task_details_right {
+  width: 80px;
+  height: 24px;
+}
+
+.task_category {
+  text-align: center;
+}
+
+.task label {
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 16px;
+}
+
+.task_desc {
+  margin-bottom: 4px;
+}
+
+.task_due i {
+  margin-right: 8px;
+}
