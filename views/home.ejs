@@ -106,7 +106,8 @@
               <div class="task_details_left">
                 <div class="task_desc"><%= i.description %></div>
                 <div class="task_due">
-                  <i class="far fa-calendar-alt"></i><%= i.due_date %>
+                  <i class="far fa-calendar-alt"></i><%=
+                  i.due_date.toDateString() %>
                 </div>
               </div>
               <div

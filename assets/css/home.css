@@ -55,7 +55,6 @@ main {
   height: auto;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  min-height: 90vh;
 }
 
 main > div {
@@ -220,7 +219,7 @@ button i {
 
 .task_details_right {
   width: 80px;
-  height: 24px;
+  height: 32px;
 }
 
 .task_category {

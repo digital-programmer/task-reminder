@@ -6,6 +6,7 @@ module.exports.home = function (req, res) {
       console.log("Error in fetching from db");
       return;
     }
+    tasks.sort((a, b) => a.due_date - b.due_date);
 
     return res.render("home", {
       title: "My ToDo App",
@@ -13,7 +14,7 @@ module.exports.home = function (req, res) {
     });
   });
 };
-
+String;
 module.exports.create_task = function (req, res) {
   Task.create(
     {
