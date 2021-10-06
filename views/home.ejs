@@ -23,7 +23,12 @@
       </div>
       <!-- Form to enter task details -->
       <div class="form_container">
-        <form action="" method="post" id="add_task_form">
+        <form
+          action="/create-task"
+          method="post"
+          id="add_task_form"
+          autocomplete="off"
+        >
           <div class="top_desc" id="description_tag">
             <label for="description">Description</label>
             <br />
@@ -32,6 +37,7 @@
               name="description"
               id="description"
               placeholder="What do you need to do"
+              required
             />
           </div>
           <div class="down_desc">
@@ -55,6 +61,7 @@
                 id="due_date"
                 name="due_date"
                 min="2021-10-06"
+                required
               />
             </div>
           </div>
@@ -76,21 +83,26 @@
           class="flex halign valign"
           id="delete_task_btn"
         >
-          <i class="fas fa-trash-alt"></i>Delete Tasks
+          <i class="far fa-trash-alt"></i>Delete Tasks
         </button>
       </div>
       <!-- Display Task List -->
       <div class="task_container">
-        <form action="" method="post" id="delete_task_form">
+        <form
+          action="/delete-tasks"
+          method="post"
+          id="delete_task_form"
+          autocomplete="off"
+        >
           <% for (let i of task_list){ %>
           <div class="task flex valign">
             <input
               type="checkbox"
-              id="<%= i.id %>"
-              name="<%= i.id %>"
-              value="<%= i.id %>"
+              id="<%= i._id %>"
+              name="<%= i._id %>"
+              value="<%= i.description %>"
             />
-            <label class="flex valign" for="<%= i.id %>">
+            <label class="flex valign" for="<%= i._id %>">
               <div class="task_details_left">
                 <div class="task_desc"><%= i.description %></div>
                 <div class="task_due">
