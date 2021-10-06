@@ -10,6 +10,8 @@
 
 body {
   font-family: "Lato", sans-serif;
+  color: #333;
+  background-color: rgb(12, 12, 12);
 }
 
 /* common css classes */
@@ -33,7 +35,14 @@ body {
 .halign {
   justify-content: center;
 }
-
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+::-webkit-datetime-edit-month-field:focus,
+::-webkit-datetime-edit-day-field:focus,
+::-webkit-datetime-edit-year-field:focus {
+  background: rgb(60, 112, 60);
+}
 form {
   width: 100%;
 }
@@ -42,8 +51,11 @@ form {
 
 main {
   max-width: 700px;
-  margin: 0 auto;
-  margin-top: 24px;
+  margin: 24px auto;
+  height: auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  min-height: 90vh;
 }
 
 main > div {
@@ -56,35 +68,81 @@ main > div {
   text-align: center;
 }
 
+.heading h1 {
+  padding-top: 12px;
+}
+
 /* add task form  */
 #add_task_form input,
-select {
+#add_task_form select {
   width: 100%;
-  background-color: white;
   border: none;
   outline: none;
+  opacity: 0.7;
+  background-color: #e9edc9;
+}
+
+option {
+  background-color: #333;
+  color: #e9edc9;
+}
+
+::placeholder {
+  color: #333;
+}
+.form_container {
+  background-color: #e9edc9;
+}
+
+.top_desc:focus-within {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
+#description:focus {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
+.top_desc:focus-within input::placeholder {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
 }
 
 .top_desc {
-  padding: 6px 10px 16px;
-  border-top: 1px solid grey;
+  padding: 6px 15px 22px;
+  border-top: 2px solid #ccd5ae;
+}
+.top_desc label,
+.down_desc label {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.top_desc,
+.down_desc {
+  cursor: pointer;
 }
 
 .down_desc {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+}
+
+.down_desc select,
+.down_desc input {
+  cursor: pointer;
 }
 
 .down_desc_left {
-  border-right: 1px solid grey;
+  border-right: 2px solid #ccd5ae;
 }
 
 .down_desc_left,
 .down_desc_right {
-  padding-right: 10px;
-  padding: 6px 10px 16px;
+  padding: 6px 15px 16px;
+  border-top: 2px solid #ccd5ae;
+  border-bottom: 2px solid #ccd5ae;
 }
 
 .down_desc > div {
@@ -95,11 +153,51 @@ select {
   margin-left: -3px;
 }
 
+.down_desc_left:focus-within {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
+.down_desc_left:focus-within #category {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
+.down_desc_right:focus-within {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
+.down_desc_right:focus-within #due_date {
+  background-color: #ccd5ae;
+  transition: all 0.2s ease-in;
+}
+
 /* button styles */
 button {
   width: 120px;
   height: 40px;
   margin: 0 5px;
+  outline: none;
+  font-weight: 700;
+  border-style: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  color: white;
+  font-size: 13px;
+}
+
+#add_task_btn {
+  background-color: #283618;
+}
+
+#delete_task_btn {
+  background-color: #bc6c25;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 button i {
@@ -109,8 +207,13 @@ button i {
 /* delete task form */
 
 .task {
-  border-top: 1px solid grey;
-  padding: 16px 10px;
+  border-top: 2px solid #cfc691;
+  padding: 16px 15px;
+  background-color: #eae2b7;
+}
+
+.task_container {
+  border-bottom: 2px solid #cfc691;
 }
 
 .task_details_right {
@@ -120,6 +223,10 @@ button i {
 
 .task_category {
   text-align: center;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 .task label {
@@ -130,8 +237,37 @@ button i {
 
 .task_desc {
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
+.task_due {
+  font-size: 12px;
+  opacity: 0.9;
+}
 .task_due i {
   margin-right: 8px;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+.task_details_right {
+  color: white;
+}
+
+.school {
+  background-color: #14213d;
+}
+.personal {
+  background-color: #ae2012;
+}
+.work {
+  background-color: #333;
+}
+.cleaning {
+  background-color: #5f0f40;
+}
+
+.other {
+  background-color: #283d3b;
 }

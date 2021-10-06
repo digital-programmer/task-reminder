@@ -24,7 +24,7 @@
       <!-- Form to enter task details -->
       <div class="form_container">
         <form action="" method="post" id="add_task_form">
-          <div class="top_desc">
+          <div class="top_desc" id="description_tag">
             <label for="description">Description</label>
             <br />
             <input
@@ -35,7 +35,7 @@
             />
           </div>
           <div class="down_desc">
-            <div class="down_desc_left">
+            <div class="down_desc_left" id="category_tag">
               <label for="category">Category</label>
               <br />
               <select name="category" id="category">
@@ -47,7 +47,7 @@
                 <option value="other">Other</option>
               </select>
             </div>
-            <div class="down_desc_right">
+            <div class="down_desc_right" id="date_tag">
               <label for="due-date">Due date</label>
               <br />
               <input
@@ -62,13 +62,19 @@
       </div>
       <!-- Submit buttons for both forms -->
       <div class="btn_container flex halign valign">
-        <button type="submit" form="add_task_form" class="flex halign valign">
+        <button
+          type="submit"
+          form="add_task_form"
+          class="flex halign valign"
+          id="add_task_btn"
+        >
           <i class="fas fa-plus"></i>Add Task
         </button>
         <button
           type="submit"
           form="delete_task_form"
           class="flex halign valign"
+          id="delete_task_btn"
         >
           <i class="fas fa-trash-alt"></i>Delete Tasks
         </button>
@@ -91,7 +97,9 @@
                   <i class="far fa-calendar-alt"></i><%= i.due_date %>
                 </div>
               </div>
-              <div class="task_details_right <%= i.category %>">
+              <div
+                class="task_details_right flex valign halign <%= i.category %>"
+              >
                 <div class="task_category"><%= i.category %></div>
               </div>
             </label>

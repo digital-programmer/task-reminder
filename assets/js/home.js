@@ -1,5 +1,3 @@
-console.log("Javascript is running");
-
 // Program to set min date of input date to today
 var today = new Date();
 var dd = today.getDate();
