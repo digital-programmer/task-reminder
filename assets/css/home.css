@@ -92,6 +92,8 @@ option {
 ::placeholder {
   color: #333;
 }
+
+/* description tag */
 .form_container {
   background-color: #e9edc9;
 }
@@ -126,6 +128,8 @@ option {
 .down_desc {
   cursor: pointer;
 }
+
+/* category and due date  */
 
 .down_desc {
   display: flex;
@@ -264,6 +268,7 @@ input[type="checkbox"] {
   color: white;
 }
 
+/* styles for different category */
 .school {
   background-color: #14213d;
 }

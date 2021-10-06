@@ -1,7 +1,7 @@
 // require library
 const mongoose = require("mongoose");
 
-// connect to database
+// connect to local database (will connect to cloud db later)
 mongoose.connect("mongodb://localhost:27017/tasks_list_db");
 
 // acquire the connection object

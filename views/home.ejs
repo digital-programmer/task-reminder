@@ -69,6 +69,7 @@
       </div>
       <!-- Submit buttons for both forms -->
       <div class="btn_container flex halign valign">
+        <!-- button for add task -->
         <button
           type="submit"
           form="add_task_form"
@@ -77,6 +78,7 @@
         >
           <i class="fas fa-plus"></i>Add Task
         </button>
+        <!-- button for deleting tasks -->
         <button
           type="submit"
           form="delete_task_form"
@@ -88,20 +90,11 @@
       </div>
       <!-- Display Task List -->
       <div class="task_container">
-        <form
-          action="/delete-tasks"
-          method="post"
-          id="delete_task_form"
-          autocomplete="off"
-        >
+        <form action="/delete-tasks" method="post" id="delete_task_form" autocomplete="off">
+          <!-- code to display tasks -->
           <% for (let i of task_list){ %>
           <div class="task flex valign">
-            <input
-              type="checkbox"
-              id="<%= i._id %>"
-              name="<%= i._id %>"
-              value="<%= i.description %>"
-            />
+            <input type="checkbox" id="<%= i._id %>" name="<%= i._id %>" value="<%= i.description %>"/>
             <label class="flex valign" for="<%= i._id %>">
               <div class="task_details_left">
                 <div class="task_desc"><%= i.description %></div>
@@ -122,6 +115,7 @@
       </div>
     </main>
 
+    <!-- external js -->
     <script type="text/javascript" src="/js/home.js"></script>
   </body>
 </html>
