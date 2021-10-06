@@ -110,10 +110,10 @@
                   i.due_date.toDateString() %>
                 </div>
               </div>
-              <div
-                class="task_details_right flex valign halign <%= i.category %>"
-              >
-                <div class="task_category"><%= i.category %></div>
+              <div class="task_details_right flex valign halign">
+                <div class="task_category <%= i.category %> flex valign halign">
+                  <%= i.category %>
+                </div>
               </div>
             </label>
           </div>

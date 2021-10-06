@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-collapse: collapse;
 }
 
 body {
@@ -55,6 +56,7 @@ main {
   height: auto;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   background-color: #fff;
+  min-height: 90vh;
 }
 
 main > div {
@@ -111,7 +113,7 @@ option {
 }
 
 .top_desc {
-  padding: 6px 15px 22px;
+  padding: 6px 20px 22px;
   border-top: 2px solid #ccd5ae;
 }
 .top_desc label,
@@ -141,7 +143,7 @@ option {
 
 .down_desc_left,
 .down_desc_right {
-  padding: 6px 15px 16px;
+  padding: 6px 20px 16px;
   border-top: 2px solid #ccd5ae;
   border-bottom: 2px solid #ccd5ae;
 }
@@ -209,17 +211,12 @@ button i {
 
 .task {
   border-top: 2px solid #cfc691;
-  padding: 16px 15px;
+  padding: 16px 20px;
   background-color: #eae2b7;
 }
 
 .task_container {
   border-bottom: 2px solid #cfc691;
-}
-
-.task_details_right {
-  width: 80px;
-  height: 32px;
 }
 
 .task_category {
@@ -228,12 +225,23 @@ button i {
   font-size: 12px;
   font-weight: 600;
   opacity: 0.9;
+  width: 70px;
+  height: 30px;
+}
+
+.task_details_left {
+  flex: 3;
+}
+
+.task_details_right {
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .task label {
   width: 100%;
   justify-content: space-between;
-  padding-left: 16px;
+  padding-left: 20px;
 }
 
 .task_desc {
@@ -271,4 +279,65 @@ input[type="checkbox"] {
 
 .other {
   background-color: #283d3b;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 750px) {
+  main {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .down_desc {
+    flex-direction: column;
+  }
+
+  .down_desc_right {
+    border-top: none;
+  }
+  .task_desc {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .task_desc {
+    font-size: 13px;
+  }
+
+  .task_due {
+    font-size: 11px;
+  }
+
+  .task_category {
+    font-size: 10px;
+    width: 60px;
+    height: 22px;
+  }
+
+  .heading h1 {
+    font-size: 26px;
+  }
+
+  .top_desc label,
+  .down_desc label {
+    font-size: 13px;
+  }
+
+  #add_task_form input,
+  #add_task_form select {
+    font-size: 11px;
+  }
+
+  .task label {
+    padding-left: 10px;
+  }
+
+  button {
+    width: 100px;
+    height: 30px;
+    font-size: 11px;
+  }
 }
